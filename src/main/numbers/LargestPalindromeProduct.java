@@ -42,12 +42,6 @@ public class LargestPalindromeProduct {
     private static boolean isPalidrome(int input) {
         if (input >= -9 && input <= 9) return true;
         String number = String.valueOf(input);
-        char[] digits = number.toCharArray();
-        for (int i = 0; i < digits.length/2; i++) {
-            if (digits[i] != digits[digits.length - (1 + i)]) {
-                return false;
-            }
-        }
-        return true;
+        return number.equals(new StringBuilder(number).reverse().toString());
     }
 }
