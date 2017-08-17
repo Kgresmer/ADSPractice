@@ -44,4 +44,12 @@ public class FindAllUniqueCharsTest {
         assertTrue(FindAllUniqueChars.doesStringContainOnlyUniqueChars(input2));
     }
 
+    @Test
+    public void testIfStringOnlyUniqueChars() {
+        String input = "aasdfee";
+        String input2 = "asdfe";
+        assertFalse(FindAllUniqueChars.doesStringContainOnlyUniqueCharsNoBoolean(input));
+        assertTrue(FindAllUniqueChars.doesStringContainOnlyUniqueCharsNoBoolean(input2));
+    }
+
 }

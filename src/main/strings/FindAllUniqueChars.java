@@ -1,6 +1,8 @@
 package main.strings;
 
+import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Map;
 import java.util.Set;
 
 /**
@@ -35,5 +37,18 @@ public class FindAllUniqueChars {
             charSet[index] = true;
         }
         return true;
+    }
+
+    public static boolean doesStringContainOnlyUniqueCharsNoBoolean(String input) {
+        Map<Character, Integer> values = new HashMap<>();
+        char[] chars = input.toCharArray();
+        for (char c : chars) {
+            if (values.get(c) == null) {
+                values.put(c, 1);
+            } else {
+                values.put(c, values.get(c)+1);
+            }
+        }
+        return values.keySet().size() == input.length();
     }
 }
