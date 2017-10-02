@@ -30,4 +30,23 @@ public class FibonacciTest {
         System.out.println("Recursive: " + (finishTime2 - startTime2)/10000);
     }
 
+    @Test
+    public void testFib2() {
+        //0 1 1 2 3 5 8 13 21 34 55
+        assertEquals(34, fib(10));
+    }
+
+    private int fib(int numberInSeq) {
+        int a = 0;
+        int b = 1;
+        int newTotal = 0;
+
+        for (int i = 2; i <= numberInSeq; i++) {
+            newTotal = a + b;
+            a = b;
+            b = newTotal;
+        }
+        return newTotal;
+    }
+
 }
